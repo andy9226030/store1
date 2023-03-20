@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--column代表mysql的欄位-->
+<!--property表示user類裡面的屬性-->
+<mapper namespace="com.store1.mapper.UserMapper">
+    <resultMap id="UserEntityMap" type="com.store1.entity.User">
+        <result column="uid" property="uid"></result>
+        <result column="is_delete" property="isDelete"></result>
+        <result column="created_user" property="createdUser"></result>
+        <result column="created_time" property="createdTime"></result>
+        <result column="modified_user" property="modifiedUser"></result>
+        <result column="modified_time" property="modifiedTime"></result>
+    </resultMap>
+
+
+    <!--插入語句-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
+        INSERT INTO `t_user`(username, password,
+                             salt, phone, email, gender, avatar, is_delete, created_user, created_time, modified_user,
+                             modified_time)
+        VALUES (#{username}, #{password}, #{salt}, #{phone}, #{email}, #{gender}, #{avatar}, #{isDelete},
+                #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+    <!--查詢語句-->
+    <select id="FinyByUsername" resultMap="UserEntityMap">
+        select *
+        from t_user
+        where username = #{username}
+    </select>
+
+    <update id="updataPasswordByuid">
+        update t_user
+        set password=#{password},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        where uid = #{uid}
+    </update>
+
+    <select id="finyByUid" resultMap="UserEntityMap">
+        select *
+        FROM t_user
+        where uid = #{uid}
+    </select>
+    <update id="userdata">
+        update t_user
+        set
+        <if test="phone !=null">phone=#{phone},</if>
+        <if test="email!=null">email=#{email},</if>
+        <if test="gender!=null">gender =#{gender},</if>
+        modified_user=#{modifiedUser},
+        created_time=#{modifiedTime}
+        Where uid=#{uid}
+    </update>
+
+    <update id="updataAvater">
+        update t_user
+        set avatar=#{avatar},
+            modified_user=#{modifiedUser},
+            modified_time=#{modifiedTime}
+        where uid = #{uid}
+    </update>
+
+</mapper>
