@@ -35,9 +35,11 @@
     </select>
 
 
-    <select id="getAddress1" resultMap="finyByaddress">
+    <select id="finy_Address" resultMap="finyByaddress">
         select *
         from t_address
         where uid = #{uid}
     </select>
+
+
 </mapper>

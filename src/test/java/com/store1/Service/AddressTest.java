@@ -29,4 +29,9 @@ public class AddressTest {
         address.setTag("wpfkqpfwqf");
         iAddressService.addNewaddress(address, 20, "admin");
     }
+    @Test
+    public void getAddress(){
+       Address uid= iAddressService.GetAddress(00);
+        System.out.println(uid);
+    }
 }

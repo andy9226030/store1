@@ -37,6 +37,10 @@ public class BaseController {
         } else if (e instanceof AddressCountLimitException) {
             result.setState(406);
             result.setMessage("超過最大限制");
+        } else if (e instanceof  GetNotAddres) {
+            result.setState(407);
+            result.setMessage("查詢不到資料");
+
         }
         return result;
     }

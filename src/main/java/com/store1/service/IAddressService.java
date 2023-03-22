@@ -1,6 +1,7 @@
 package com.store1.service;
 
 import com.store1.entity.Address;
+import jakarta.servlet.http.HttpSession;
 
 public interface IAddressService {
     /**
@@ -10,5 +11,12 @@ public interface IAddressService {
      */
     void addNewaddress(Address address, Integer uid, String Username);
 
-//    Address getAddress(Integer uid);
+    /**
+     *
+     * @param uid
+     * @return
+     */
+    Address GetAddress(Integer uid);
+
+//    Integer
 }

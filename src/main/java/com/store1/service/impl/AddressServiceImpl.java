@@ -4,6 +4,8 @@ import com.store1.entity.Address;
 import com.store1.mapper.AddressMapper;
 import com.store1.service.IAddressService;
 import com.store1.service.ex.AddressCountLimitException;
+import com.store1.service.ex.UsernameNotException;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -52,4 +54,36 @@ public class AddressServiceImpl implements IAddressService {
             System.out.println("插入失敗");
         }
     }
+
+    /**
+     * 返回傳送用戶地址
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    public Address GetAddress(Integer uid) {
+        Address address = userAddress.finy_Address(uid);
+        if (address == null) {
+            throw new UsernameNotException("沒有此帳號");
+        }
+        Address address1 = new Address();
+        if (address ==null){
+
+        }else {
+            address1.setName(address.getName());
+            address1.setProvinceCode(address.getProvinceCode());
+            address1.setCityName(address.getProvinceCode());
+            address1.setCityCode(address.getCityCode());
+            address1.setAreaCode(address.getAreaCode());
+            address1.setAreaName(address.getAreaCode());
+            address1.setZip(address.getZip());
+            address1.setAddress(address.getAddress());
+            address1.setPhone(address.getPhone());
+            address1.setTel(address.getTel());
+            address1.setTag(address.getTag());
+        }
+        return address1;
+    }
 }
+
