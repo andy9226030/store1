@@ -10,6 +10,7 @@
         <id column="aid" property="aid"></id>
         <id column="uid" property="uid"></id>
         <result column="province_code" property="provinceCode"></result>
+        <result column="province_name" property="provinceName"></result>
         <result column="city_name" property="cityName"></result>
         <result column="city_code" property="cityCode"></result>
         <result column="area_name" property="areaName"></result>
@@ -21,9 +22,11 @@
         <result column="modified_time" property="modifiedTime"></result>
     </resultMap>
     <insert id="insert" keyProperty="aid" useGeneratedKeys="true">
-        insert into t_address(uid, name, province_code, city_name, city_code, area_name, area_code, zip, address,
+        insert into t_address(uid, name, province_name, province_code, city_name, city_code, area_name, area_code, zip,
+                              address,
                               phone, tel, tag, is_default, created_user, created_time, modified_user, modified_time)
-        values (#{uid}, #{name}, #{provinceCode}, #{cityName}, #{cityCode}, #{areaName}, #{areaCode}, #{zip},
+        values (#{uid}, #{name}, #{provinceName}, #{provinceCode}, #{cityName}, #{cityCode}, #{areaName}, #{areaCode},
+                #{zip},
                 #{address},
                 #{phone}, #{tel}, #{tag}, #{isDefault}, #{createdUser}, #{createdTime}, #{modifiedUser},
                 #{modifiedTime})

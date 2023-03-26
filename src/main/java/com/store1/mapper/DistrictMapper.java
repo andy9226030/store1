@@ -13,5 +13,9 @@ public interface DistrictMapper {
      */
     List<District> findByParent(String parent);
 
-
+    /**
+     * @param code
+     * @return
+     */
+    String findNameByCode(String code);
 }

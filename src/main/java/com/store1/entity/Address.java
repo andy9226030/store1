@@ -8,6 +8,7 @@ public class Address extends BaseEntity {
     private Integer uid;
     private String name;
     private String provinceCode;
+    private String provinceName;
 
     private String cityName;
     private String cityCode;
@@ -19,71 +20,6 @@ public class Address extends BaseEntity {
     private String tel;
     private String tag;
     private Integer isDefault;
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "aid=" + aid +
-                ", uid=" + uid +
-                ", name='" + name + '\'' +
-                ", provinceCode='" + provinceCode + '\'' +
-                ", cityName='" + cityName + '\'' +
-                ", cityCode='" + cityCode + '\'' +
-                ", areaName='" + areaName + '\'' +
-                ", areaCode='" + areaCode + '\'' +
-                ", zip='" + zip + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", tel='" + tel + '\'' +
-                ", tag='" + tag + '\'' +
-                ", isDefault=" + isDefault +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-
-        Address address1 = (Address) o;
-
-        if (!Objects.equals(aid, address1.aid)) return false;
-        if (!Objects.equals(uid, address1.uid)) return false;
-        if (!Objects.equals(name, address1.name)) return false;
-        if (!Objects.equals(provinceCode, address1.provinceCode))
-            return false;
-        if (!Objects.equals(cityName, address1.cityName)) return false;
-        if (!Objects.equals(cityCode, address1.cityCode)) return false;
-        if (!Objects.equals(areaName, address1.areaName)) return false;
-        if (!Objects.equals(areaCode, address1.areaCode)) return false;
-        if (!Objects.equals(zip, address1.zip)) return false;
-        if (!Objects.equals(address, address1.address)) return false;
-        if (!Objects.equals(phone, address1.phone)) return false;
-        if (!Objects.equals(tel, address1.tel)) return false;
-        if (!Objects.equals(tag, address1.tag)) return false;
-        return Objects.equals(isDefault, address1.isDefault);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (aid != null ? aid.hashCode() : 0);
-        result = 31 * result + (uid != null ? uid.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (provinceCode != null ? provinceCode.hashCode() : 0);
-        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
-        result = 31 * result + (cityCode != null ? cityCode.hashCode() : 0);
-        result = 31 * result + (areaName != null ? areaName.hashCode() : 0);
-        result = 31 * result + (areaCode != null ? areaCode.hashCode() : 0);
-        result = 31 * result + (zip != null ? zip.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (tel != null ? tel.hashCode() : 0);
-        result = 31 * result + (tag != null ? tag.hashCode() : 0);
-        result = 31 * result + (isDefault != null ? isDefault.hashCode() : 0);
-        return result;
-    }
 
     public Integer getAid() {
         return aid;
@@ -115,6 +51,14 @@ public class Address extends BaseEntity {
 
     public void setProvinceCode(String provinceCode) {
         this.provinceCode = provinceCode;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
     }
 
     public String getCityName() {
@@ -195,5 +139,74 @@ public class Address extends BaseEntity {
 
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Address address1 = (Address) o;
+
+        if (!Objects.equals(aid, address1.aid)) return false;
+        if (!Objects.equals(uid, address1.uid)) return false;
+        if (!Objects.equals(name, address1.name)) return false;
+        if (!Objects.equals(provinceCode, address1.provinceCode))
+            return false;
+        if (!Objects.equals(provinceName, address1.provinceName))
+            return false;
+        if (!Objects.equals(cityName, address1.cityName)) return false;
+        if (!Objects.equals(cityCode, address1.cityCode)) return false;
+        if (!Objects.equals(areaName, address1.areaName)) return false;
+        if (!Objects.equals(areaCode, address1.areaCode)) return false;
+        if (!Objects.equals(zip, address1.zip)) return false;
+        if (!Objects.equals(address, address1.address)) return false;
+        if (!Objects.equals(phone, address1.phone)) return false;
+        if (!Objects.equals(tel, address1.tel)) return false;
+        if (!Objects.equals(tag, address1.tag)) return false;
+        return Objects.equals(isDefault, address1.isDefault);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
+        result = 31 * result + (uid != null ? uid.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (provinceCode != null ? provinceCode.hashCode() : 0);
+        result = 31 * result + (provinceName != null ? provinceName.hashCode() : 0);
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        result = 31 * result + (cityCode != null ? cityCode.hashCode() : 0);
+        result = 31 * result + (areaName != null ? areaName.hashCode() : 0);
+        result = 31 * result + (areaCode != null ? areaCode.hashCode() : 0);
+        result = 31 * result + (zip != null ? zip.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (tel != null ? tel.hashCode() : 0);
+        result = 31 * result + (tag != null ? tag.hashCode() : 0);
+        result = 31 * result + (isDefault != null ? isDefault.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "aid=" + aid +
+                ", uid=" + uid +
+                ", name='" + name + '\'' +
+                ", provinceCode='" + provinceCode + '\'' +
+                ", provinceName='" + provinceName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", cityCode='" + cityCode + '\'' +
+                ", areaName='" + areaName + '\'' +
+                ", areaCode='" + areaCode + '\'' +
+                ", zip='" + zip + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", tel='" + tel + '\'' +
+                ", tag='" + tag + '\'' +
+                ", isDefault=" + isDefault +
+                '}';
     }
 }

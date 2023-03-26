@@ -43,7 +43,7 @@ public class LoginInterceptorConfigurer implements WebMvcConfigurer {
         paper.add("/web/index.html");
         paper.add("/users/reg");
         paper.add("/users/Login");
-//        paper.add("/web/login");
+        paper.add("/district/**");
 
         /**
          * addInterceptor 添加配置把剛剛寫好用ｕｉｄ 判斷通行的

@@ -9,4 +9,10 @@
     where parent = #{parent}
 
 </select>
+    <select id="findNameByCode" resultType="java.lang.String">
+        select name
+        from district
+        where code = #{code}
+
+    </select>
 </mapper>

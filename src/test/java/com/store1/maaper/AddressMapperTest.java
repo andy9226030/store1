@@ -23,6 +23,7 @@ public class AddressMapperTest {
         address.setUid(22);
         address.setName("qweqwe");
         address.setProvinceCode("aspdkakpd");
+        address.setProvinceName("aspdkakpd");
         address.setCityName("oqfkqofk");
         address.setCityCode("ofojfqjpwf");
         address.setAreaName("papfkapk");

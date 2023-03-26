@@ -273,27 +273,27 @@
 </footer>
 <!--页脚结束-->
 </body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $.ajax({
-            url: "/users/GetAddress",
-            type: "Get",
-            dataType: "JSON",
-            success: function (JSON) {
-                if (JSON == 200) {
-                    $("#name").val(JSON.data.name)
-                    $("#phone").val(JSON.data.phone)
-                    $("#zip").val(JSON.data.zip)
-                } else {
-                    alert("獲取失敗" + JSON.message)
-                }
-            },
-            error: function (XHR) {
-                alert(XHR.message)
-            }
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function () {-->
+<!--        $.ajax({-->
+<!--            url: "/district/getByParent",-->
+<!--            type: "Get",-->
+<!--            dataType: "JSON",-->
+<!--            success: function (JSON) {-->
+<!--                if (JSON == 200) {-->
+<!--                    $("#name").val(JSON.data.name)-->
+<!--                    $("#phone").val(JSON.data.phone)-->
+<!--                    $("#zip").val(JSON.data.zip)-->
+<!--                } else {-->
+<!--                    alert("獲取失敗" + JSON.message)-->
+<!--                }-->
+<!--            },-->
+<!--            error: function (XHR) {-->
+<!--                alert(XHR.message)-->
+<!--            }-->
 
-        })
-    })
+<!--        })-->
+<!--    })-->
 
-</script>
+<!--</script>-->
 </html>

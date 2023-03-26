@@ -11,12 +11,5 @@ public interface IAddressService {
      */
     void addNewaddress(Address address, Integer uid, String Username);
 
-    /**
-     *
-     * @param uid
-     * @return
-     */
-    Address GetAddress(Integer uid);
 
-//    Integer
 }

@@ -13,12 +13,30 @@ public class DistricServiceImpl implements IDistricService {
     @Autowired
     private DistrictMapper districtMapper;
 
-    //    @Override
-    public List<District> getParent(String Parent) {
-//        List<District> list= districtMapper.findByParent("110100");
-//        for (int i = 0; i < ; i++) {
-        return null;
+    /**
+     * 搜尋數據庫裡面的
+     *
+     * @param parent
+     * @return
+     */
+    @Override
+    public List<District> getByParent(String parent) {
+        List<District> list = districtMapper.findByParent(parent);
+        for (District d : list) {
+            d.setid(null);
+            d.setparent(null);
+        }
+        return list;
+    }
+
+    /**
+     * @param code
+     * @return
+     */
+    @Override
+    public String getNameByCode(String code) {
+        return districtMapper.findNameByCode(code);
+
 
     }
-//    }
 }

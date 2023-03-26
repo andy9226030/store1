@@ -148,13 +148,4 @@ public class UserController extends BaseController {
         addressService.addNewaddress(address, uid, username);
         return new JsonResult<Address>(OK);
     }
-
-    @RequestMapping("/GetAddress")
-    public JsonResult<Address> GetAddress(HttpSession session) {
-        Integer uid = getuidFromSession(session);
-        Address address = addressService.GetAddress(uid);
-        return new JsonResult<Address>(OK, address);
-    }
-
-
 }
