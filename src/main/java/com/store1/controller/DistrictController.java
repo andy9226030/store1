@@ -1,14 +1,12 @@
 package com.store1.controller;
 
 import com.store1.Util.JsonResult;
-import com.store1.entity.BaseEntity;
 import com.store1.entity.District;
 import com.store1.service.IDistricService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.*;
 import java.util.List;
 
 @RestController
